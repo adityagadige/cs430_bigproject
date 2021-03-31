@@ -1,0 +1,29 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+    <h3>View Patients</h3>
+  <form class="form-inline my-2 my-lg-0">
+  <input class="form-control mb-4 ml-auto myInput"type="search" placeholder="Search Entries" aria-label="Search">
+ </form>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ssn</th>
+        <th scope="col">name</th>
+        <th scope="col">birth_date </th>
+        <th scope="col">address</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+        <tr>
+          <th scope="row"><%=rows[i].ssn%></th>
+          <td><%=rows[i].name%></td>
+          <td><%=rows[i].birth_date%></td>
+          <td><%=rows[i].address%></td>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
+<%- include("partials/footer") -%>

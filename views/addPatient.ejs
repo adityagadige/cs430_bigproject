@@ -1,0 +1,51 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <h3>Add Patient</h3>
+  <form method="post" action="/patients/addPatient">
+    <div class="form-group row">
+      <label for="patientSSN" class="col-sm-2 col-form-label">Patient's SSN:</label>
+      <div class="col-sm-10">
+        <input type="text" id="patientSSN" name="patient_ssn" class="form-control w-25" maxlength="11" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" placeholder="Ex: 123-45-7890" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="patientName" class="col-sm-2 col-form-label">Patient Name:</label>
+      <div class="col-sm-10">
+        <input type="text" id="patientName" name="patient_name" class="form-control w-25" maxlength="20" placeholder="Enter name" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="patientDOB" class="col-sm-2 col-form-label">DOB:</label>
+      <div class="col-sm-10">
+        <input type="date" id="patientSSN" name="patient_dob" class="form-control w-25" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="patientAddress" class="col-sm-2 col-form-label">Address:</label>
+      <div class="col-sm-10">
+        <textarea id="patientAddress" name="patient_address" class="form-control w-50" rows="5" maxlength="100" required ></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="phySSN" class="col-sm-2 col-form-label">Physician SSN:</label>
+      <div class="col-sm-10">
+        <select id="phySSN" required name="phy_ssn" class="custom-select w-25">
+          <option value="" disabled selected>Select</option>
+            <% for(var i in rows){%>
+          <option value="<%=rows[i].ssn%>"><%=rows[i].ssn%></option>
+          <%}%>
+        </select>
+      </div>
+    </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary text-light float-left st-submit">
+  </form>
+</div>
+
+<%- include("partials/footer") -%>

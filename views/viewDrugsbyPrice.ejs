@@ -1,0 +1,70 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mb-4 ml-auto myInput" type="search" placeholder="Search Entries" aria-label="Search">
+  </form>
+  <table class="table">
+    <% if (status == 1) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Pharmaceutical Company</th>
+        <th scope="col">Drug</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].pharm_co_name%></th>
+        <td><%=rows[i].trade_name%></td>
+        <td><%=rows[i].price%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}else if (status == 2) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Pharmaceutical Company</th>
+        <th scope="col">Drug</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].pharm_co_name%></th>
+        <td><%=rows[i].trade_name%></td>
+        <td><%=rows[i].price%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}else if (status == 3) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Common Drug</th>
+        <th scope="col">Pharm_ID</th>
+        <th scope="col">Pharm_Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Pharm_ID</th>
+        <th scope="col">Pharm_Name</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].trade_name%></th>
+        <td><%=rows[i].pharm_id%></td>
+        <td><%=rows[i].name%></td>
+        <td><%=rows[i].phone%></td>
+        <td><%=rows[i].ppharm_id%></td>
+        <td><%=rows[i].pname%></td>
+        <td><%=rows[i].pphone%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}%>
+  </table>
+</div>
+<%- include("partials/footer") -%>

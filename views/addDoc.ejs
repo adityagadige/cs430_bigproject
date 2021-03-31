@@ -1,0 +1,39 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <h3>Add Doctor</h3>
+  <form method="post" action="/doctors/addDoc">
+    <div class="form-group row">
+      <label for="docSSN" class="col-sm-2 col-form-label">Doctor's SSN:</label>
+      <div class="col-sm-10">
+        <input type="text" id="docSSN" name="doc_ssn" class="form-control w-25" maxlength="11" pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}" placeholder="Ex: 123-45-7890" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="docName" class="col-sm-2 col-form-label">Doctor Name:</label>
+      <div class="col-sm-10">
+        <input type="text" id="docName" name="doctor_name" class="form-control w-25" maxlength="30" placeholder="Enter Name" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="specialty" class="col-sm-2 col-form-label">Specialty:</label>
+      <div class="col-sm-10">
+        <input type="text" id="specialty" name="spec" class="form-control w-25" maxlength="30" placeholder="Enter Specialty" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="yearExp" class="col-sm-2 col-form-label">Years of Experience:</label>
+      <div class="col-sm-10">
+        <input type="number" id="yearExp" name="yearofexp" class="form-control w-25" min="1" max="80" required>
+      </div>
+    </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary text-light float-left st-submit">
+  </form>
+</div>
+
+<%- include("partials/footer") -%>

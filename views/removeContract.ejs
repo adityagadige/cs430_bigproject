@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <h3>Remove Contract</h3>
+  <input class="form-control mb-4 ml-auto myInput w-25" type="search" placeholder="Search Entries" aria-label="Search">
+  <form method="post" action="/contracts/removeContract">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Pharm_ID</th>
+          <th scope="col">Start Date</th>
+          <th scope="col">End Date</th>
+          <th scope="col">Contract</th>
+          <th scope="col">Supervisor</th>
+          <th scope="col">PharmCo_Name</th>
+
+        </tr>
+      </thead>
+      <tbody class="myTable">
+        <% for(var i in rows){%>
+        <tr>
+          <th><input type='checkbox' class='item-list' name='row_id' value='<%=rows[i].pharm_id%>^^<%=rows[i].pharm_co_name%>'></th>
+          <th scope="row"><%=rows[i].pharm_id%></th>
+          <td><%=rows[i].start_date%></td>
+          <td><%=rows[i].end_date%></td>
+          <td><%=rows[i].text%></td>
+          <td><%=rows[i].supervisor%></td>
+          <td><%=rows[i].pharm_co_name%></td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
+    <input type="submit" value="Delete" class="btn btn-primary text-light float-left st-submit" disabled>
+  </form>
+</div>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,20 @@
+  <%- include("partials/headerLogin") -%>
+
+  <form class="form-signin" role="form" method="post" action="/login">
+    <div class="text-center mb-4">
+      <img class="mb-4" src="./images/siu_logo.png" alt="" width="120" height="120">
+      <h1 class="h4 mb-3 font-weight-bold">Database Project</h1>
+    </div>
+
+    <div class="row">
+      <input type="email" id="email" name="email" class="form-control" placeholder="Please enter your email" required>
+    </div>
+
+    <div class="row">
+      <input type="password" id="password" name="password" class="form-control bottom" placeholder="Please enter your password" required>
+    </div>
+
+
+    <button class="btn btn-lg btn-siu btn-block" type="submit">Log in</button>
+  </form>
+  <%- include("partials/footer") -%>

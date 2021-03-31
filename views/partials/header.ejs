@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Aditya Gadige">
+  <meta name="description" content="Aditya's Db Project">
+  <meta name="keywords" content="aditya's db project,gui warmup project,siuc,aditya gadige">
+  <!-- favicon to style title bar icon-->
+  <link rel="icon" href="./images/favicon.ico">
+  <!-- Google fonts https://fonts.google.com/ -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&family=PT+Serif&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css" type="text/css">
+  <title>Database Project</title>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="d-flex flex-grow-1">
+      <span class="w-100 d-lg-none d-block">
+        <!-- this centers brand on mobile deivces --></span>
+      <img src="/images/pharmacy.PNG" class="pharmacy_logo" alt="pharmacy logo" height="35" width="35">
+      <span class="navbar-brand">Good Health Pharmacies</span>
+
+      <div class="w-100 text-right">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse flex-grow-1 text-right" id="myNavbar">
+      <ul class="navbar-nav ml-auto flex-nowrap">
+        <li class="nav-item">
+          <a href="/home" class="nav-link m-2 menu-item nav-active">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle m-2 menu-item" href="#" id="navbarDropdownMenuLinkPat" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Patients
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkPat">
+            <a class="dropdown-item" href="/patients/viewPatients">View All Patients</a>
+            <a class="dropdown-item" href="/patients/addPatient">Add Patient</a>
+            <a class="dropdown-item" href="/patients/removePatient">Remove Patient</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle m-2 menu-item" href="#" id="navbarDropdownMenuLinkPres" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Prescriptions
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkPres">
+            <a class="dropdown-item" href="/prescriptions/addPrescription">Add Prescription</a>
+            <a class="dropdown-item" href="/prescriptions/viewPreStatus">View Pres_Status</a>
+            <a class="dropdown-item" href="/prescriptions/removePrescription">Remove Prescription</a>
+            <a class="dropdown-item" href="/prescriptions/viewPatientPrescriptions">View Patient and Prescriptions</a>
+            <div class="dropdown-submenu">
+              <a class="dropdown-item dropdown-toggle" href="#">View Prescriptions</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/prescriptions/viewPrescriptions/pending">Pending</a></li>
+                <li><a class="dropdown-item" href="/prescriptions/viewPrescriptions/completed">Completed</a></li>
+                <li><a class="dropdown-item" href="/prescriptions/viewPrescriptions/readytogo">Ready to go</a></li>
+                <li><a class="dropdown-item" href="/prescriptions/viewPrescriptions/cancelled">Cancelled</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle m-2 menu-item" href="#" id="navbarDropdownMenuLinkDrug" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Drugs
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkDrug">
+            <a class="dropdown-item" href="/drugs/viewDrugs?status=1">View Drugs and Make</a>
+            <a class="dropdown-item" href="/drugs/viewDrugs?status=2">View Drugs by Pharmacies</a>
+            <a class="dropdown-item" href="/drugs/viewDrugsbyPrice?status=1">Expensive Drug</a>
+            <a class="dropdown-item" href="/drugs/viewDrugsbyPrice?status=2">Inexpensive Drug</a>
+            <a class="dropdown-item" href="/drugs/viewDrugsbyPrice?status=3">Common Drugs sold</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle m-2 menu-item" href="#" id="navbarDropdownMenuLinkDoc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Doctors
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkDoc">
+            <a class="dropdown-item" href="/doctors/viewDoc?status=1">View Doctors</a>
+            <a class="dropdown-item" href="/doctors/addDoc">Add Doctor</a>
+            <a class="dropdown-item" href="/doctors/removeDoc">Remove Doctor</a>
+            <a class="dropdown-item" href="/doctors/viewDoc?status=2">View Patient's Primary Phyician</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle m-2 menu-item" href="#" id="navbarDropdownMenuLinkCon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Contact Managements
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLinkCon">
+            <a class="dropdown-item" href="/contracts/viewContracts">View Contracts</a>
+            <a class="dropdown-item" href="/contracts/addContract">Add Contract</a>
+            <a class="dropdown-item" href="/contracts/updateContract">update Contract</a>
+            <a class="dropdown-item" href="/contracts/removeContract">Remove Contract</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a href="/logout" class="btn btn-primary btn-sm mt-2">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <%- include("messages") -%>

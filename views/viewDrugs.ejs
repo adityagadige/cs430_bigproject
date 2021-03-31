@@ -1,0 +1,53 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container-fluid div-content">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mb-4 ml-auto myInput" type="search" placeholder="Search Entries" aria-label="Search">
+  </form>
+  <table class="table">
+    <% if (status == 1) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Drug Name</th>
+        <th scope="col">Manufacturer</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Generic Formula </th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].trade_name%></th>
+        <td><%=rows[i].pharm_co_name%></td>
+        <td><%=rows[i].phone%></td>
+        <td><%=rows[i].formula%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}else if (status == 2) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Pharm_ID</th>
+        <th scope="col">Pharm Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Drug</th>
+        <th scope="col">Manufacturer</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].pharm_id%></th>
+        <td><%=rows[i].name%></td>
+        <td><%=rows[i].p_phone%></td>
+        <td><%=rows[i].trade_name%></td>
+        <td><%=rows[i].pharm_co_name%></td>
+        <td><%=rows[i].c_phone%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}%>
+  </table>
+</div>
+<%- include("partials/footer") -%>

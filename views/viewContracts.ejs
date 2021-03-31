@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container-fluid div-content">
+  <form class="form-inline my-2 my-lg-0">
+  <input class="form-control mb-4 ml-auto myInput"type="search" placeholder="Search Entries" aria-label="Search">
+ </form>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Pharm_ID</th>
+        <th scope="col">Pharm_Name</th>
+        <th scope="col">Phone </th>
+        <th scope="col">Start Date</th>
+        <th scope="col">End Date</th>
+        <th scope="col">Contract</th>
+        <th scope="col">Supervisor</th>
+        <th scope="col">PharmCo_Name</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+        <tr>
+          <th scope="row"><%=rows[i].pharm_id%></th>
+          <td><%=rows[i].ppname%></td>
+          <td><%=rows[i].pphone%></td>
+          <td><%=rows[i].start_date%></td>
+          <td><%=rows[i].end_date%></td>
+          <td><%=rows[i].text%></td>
+          <td><%=rows[i].supervisor%></td>
+          <td><%=rows[i].pharm_co_name%></td>
+          <td><%=rows[i].phone%></td>
+        </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
+<%- include("partials/footer") -%>

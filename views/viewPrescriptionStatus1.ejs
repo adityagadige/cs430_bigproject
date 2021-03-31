@@ -1,0 +1,34 @@
+<%- include("partials/headerLogin") -%>
+
+<div class="jumbotron container-fluid div-content">
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Prescription_ID</th>
+        <th scope="col">Status</th>
+        <th scope="col">Drop_off Time</th>
+        <th scope="col">Pickup_Time</th>
+        <th scope="col">Pres_Date</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Drug</th>
+        <th scope="col">Drug Manf.</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].pre_id%></th>
+        <td><%=rows[i].status%></td>
+        <td><%=rows[i].drop_off_time%></td>
+        <td><%=rows[i].pick_up_time%></td>
+        <td><%=rows[i].pre_date%></td>
+        <td><%=rows[i].quantity%></td>
+        <td><%=rows[i].trade_name%></td>
+        <td><%=rows[i].pharm_co_name%></td>
+      </tr>
+      <%}%>
+    </tbody>
+  </table>
+</div>
+<%- include("partials/footer") -%>

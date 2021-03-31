@@ -1,0 +1,32 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <h3>Remove Doctor</h3>
+  <form method="post" action="/doctors/removeDoc">
+    <input class="form-control mb-4 ml-auto myInput w-25" type="search" placeholder="Search Entries" aria-label="Search">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">SSN</th>
+          <th scope="col">Name</th>
+          <th scope="col">Speciality</th>
+          <th scope="col">Years of Experience</th>
+        </tr>
+      </thead>
+      <tbody class="myTable">
+        <% for(var i in rows){%>
+        <tr>
+          <th><input type='checkbox' class='item-list' name='row_id' value=<%=rows[i].ssn%>></th>
+          <th scope="row"><%=rows[i].ssn%></th>
+          <td><%=rows[i].name%></td>
+          <td><%=rows[i].specialty%></td>
+          <td><%=rows[i].yearsOfExperience%></td>
+        </tr>
+        <%}%>
+    </tbody>
+  </table>
+  <input type="submit" value="Delete" id="docDelete" class="btn btn-primary text-light float-left st-submit" disabled>
+    </form>
+</div>
+<%- include("partials/footer") -%>

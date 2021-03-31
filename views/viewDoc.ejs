@@ -1,0 +1,51 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mb-4 ml-auto myInput" type="search" placeholder="Search Entries" aria-label="Search">
+  </form>
+  <table class="table">
+    <% if (status == 1) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">SSN</th>
+        <th scope="col">Name</th>
+        <th scope="col">Speciality</th>
+        <th scope="col">Years of Experience</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].ssn%></th>
+        <td><%=rows[i].name%></td>
+        <td><%=rows[i].specialty%></td>
+        <td><%=rows[i].yearsOfExperience%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}else if (status == 2) {%>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Patient ssn</th>
+        <th scope="col">P_name</th>
+        <th scope="col">DOB</th>
+        <th scope="col">Doc SSN</th>
+        <th scope="col">Doc Name</th>
+      </tr>
+    </thead>
+    <tbody class="myTable">
+      <% for(var i in rows){%>
+      <tr>
+        <th scope="row"><%=rows[i].ssn%></th>
+        <td><%=rows[i].name%></td>
+        <td><%=rows[i].birth_date%></td>
+        <th scope="row"><%=rows[i].dssn%></th>
+        <td><%=rows[i].dname%></td>
+      </tr>
+      <%}%>
+    </tbody>
+    <%}%>
+  </table>
+</div>
+<%- include("partials/footer") -%>

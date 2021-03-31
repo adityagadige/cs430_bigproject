@@ -1,0 +1,64 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container div-content">
+  <h3>Add Contract</h3>
+  <form method="post" action="/contracts/addContract">
+
+    <div class="form-group row">
+      <label for="pharmID" class="col-sm-2 col-form-label">Pharm ID:</label>
+      <div class="col-sm-10">
+        <select id="pharmID" required name="pharm_id" class="custom-select w-25">
+          <option value="" disabled selected>Select</option>
+          <% for(var i in rows[0]){%>
+          <option value="<%=rows[0][i].pharm_id%>"><%=rows[0][i].pharm_id%></option>
+          <%}%>
+            </select>
+          </div>
+        </div>
+
+    <div class="form-group row">
+      <label for="startDate" class="col-sm-2 col-form-label">Start Date:</label>
+      <div class="col-sm-10">
+        <input type="date" id="startDate" name="start_date" class="form-control w-25" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="endDate" class="col-sm-2 col-form-label">End Date:</label>
+      <div class="col-sm-10">
+        <input type="date" id="endDate" name="end_date" class="form-control w-25" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="contract" class="col-sm-2 col-form-label">Contract:</label>
+      <div class="col-sm-10">
+        <textarea id="contract" required name="contract" class="form-control w-50" rows="10" maxlength="4000" ></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="supName" class="col-sm-2 col-form-label">Supervisor Name:</label>
+      <div class="col-sm-10">
+        <input type="text" id="supName" name="sup_name" class="form-control w-25" placeholder="Enter Supervisor's Name" maxlength="20" required>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="pharmcoName" class="col-sm-2 col-form-label">PharmCo Name:</label>
+      <div class="col-sm-10">
+        <select id="pharmcoName" required name="pharmco_name" class="custom-select w-25">
+          <option value="" disabled selected>Select</option>
+            <% for(var i in rows[1]){%>
+          <option value="<%=rows[1][i].name%>"><%=rows[1][i].name%></option>
+          <%}%>
+        </select>
+      </div>
+    </div>
+
+
+    <input type="submit" value="Submit" class="btn btn-primary text-light float-left st-submit">
+  </form>
+</div>
+
+<%- include("partials/footer") -%>

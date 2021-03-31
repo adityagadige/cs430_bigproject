@@ -1,0 +1,46 @@
+<%- include("partials/header") -%>
+
+<div class="jumbotron container-fluid div-content">
+  <h3>Remove Prescription</h3>
+  <input class="form-control mb-4 ml-auto myInput w-25" type="search" placeholder="Search Entries" aria-label="Search">
+  <form method="post" action="/prescriptions/removePrescription">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Patient SSN</th>
+          <th scope="col">Prescription_ID</th>
+          <th scope="col">Status</th>
+          <th scope="col">Drop_off Time</th>
+          <th scope="col">Pickup_Time</th>
+          <th scope="col">Pres_Date</th>
+          <th scope="col">Doctor SSN</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Drug</th>
+          <th scope="col">Drug Manf.</th>
+        </tr>
+      </thead>
+      <tbody class="myTable">
+        <% for(var i in rows){%>
+        <tr>
+          <th><input type='checkbox' class='item-list' name='row_id' value='<%=rows[i].pre_id%>'></th>
+          <th scope="row"><%=rows[i].ssn%></th>
+          <td><%=rows[i].pre_id%></td>
+          <td><%=rows[i].status%></td>
+          <td><%=rows[i].drop_off_time%></td>
+          <td><%=rows[i].pick_up_time%></td>
+          <td><%=rows[i].pre_date%></td>
+          <td><%=rows[i].phy_ssn%></td>
+          <td><%=rows[i].quantity%></td>
+          <td><%=rows[i].trade_name%></td>
+          <td><%=rows[i].pharm_co_name%></td>
+        </tr>
+        <%}%>
+      </tbody>
+    </table>
+
+    <input type="submit" value="Delete" class="btn btn-primary text-light float-left st-submit" disabled>
+  </form>
+</div>
+
+<%- include("partials/footer") -%>
